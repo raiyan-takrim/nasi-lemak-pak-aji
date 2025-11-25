@@ -8,25 +8,44 @@ export default function QRCodeGenerator() {
         const svg = document.getElementById("QRCode");
         if (!svg) return;
 
+        // Serialize SVG
         const svgData = new XMLSerializer().serializeToString(svg);
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
         const img = new Image();
 
+        // Desired output size & padding (increase padding for white border)
+        const qrSize = 256; // intrinsic QR size
+        const padding = 40; // white margin around QR
+        const outputSize = qrSize + padding * 2; // final canvas size
+
         img.onload = () => {
-            canvas.width = img.width;
-            canvas.height = img.height;
-            if (ctx) {
-                ctx.drawImage(img, 0, 0);
-                const pngFile = canvas.toDataURL("image/png");
-                const downloadLink = document.createElement("a");
-                downloadLink.download = 'qr-code.png';
-                downloadLink.href = `${pngFile}`;
-                downloadLink.click();
-            }
+            const canvas = document.createElement('canvas');
+            canvas.width = outputSize;
+            canvas.height = outputSize;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return;
+
+            // Fill background white (guarantees margin + solid background)
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, outputSize, outputSize);
+
+            // Draw the SVG QR centered with padding
+            ctx.drawImage(img, padding, padding, qrSize, qrSize);
+
+            // Convert to PNG & trigger download
+            canvas.toBlob((blob) => {
+                if (!blob) return;
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'qr-code.png';
+                link.click();
+                URL.revokeObjectURL(url);
+            }, 'image/png');
         };
 
-        img.src = `data:image/svg+xml;base64,${btoa(svgData)}`;
+        // Use proper UTF-8 encoding before base64
+        const encoded = btoa(unescape(encodeURIComponent(svgData)));
+        img.src = `data:image/svg+xml;base64,${encoded}`;
     };
 
     return (
@@ -34,9 +53,12 @@ export default function QRCodeGenerator() {
             <div className="bg-white p-4 rounded-md shadow-md">
                 <QRCode
                     id="QRCode"
-                    value={window.location.href}
+                    value={typeof window !== 'undefined' ? window.location.href : ''}
                     size={256}
                     level="H"
+                    bgColor="#FFFFFF"
+                    fgColor="#000000"
+                    style={{ display: 'block' }}
                 />
             </div>
             <Button
