@@ -1,0 +1,21 @@
+{
+    "name": "Nasi Lemak Pak Aji",
+    "short_name": "Pak Aji",
+    "description": "Experience the authenticity of Nasi Lemak Pak Aji. Preserving tradition, one plate at a time.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#8B4513",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
