@@ -2,7 +2,6 @@ import Link from 'next/link';
 import menuItems from '@/data/menu-items';
 import { Info, Utensils } from 'lucide-react';
 import Image from 'next/image';
-import { QRWrapper } from '@/components/share/qr-wrapper';
 import {
     Dialog,
     DialogContent,
@@ -11,7 +10,6 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import { ShareMenuItem } from '@/components/share-menu-item';
 import ShareButton from '@/components/share/share-button';
 import QRCodeGenerator from '@/components/share/qr-generator';
 

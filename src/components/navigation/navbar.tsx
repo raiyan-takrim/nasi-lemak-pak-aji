@@ -5,11 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "../ui/theme-toggler";
 
-const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Our Heritage", href: "#heritage" },
-    { name: "Menu", href: "#menu" },
-];
+import navItems from "@/data/nav-items";
 
 const Nav = () => {
     const pathname = usePathname();
