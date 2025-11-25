@@ -24,7 +24,7 @@ const Nav = () => {
                             </span>
                         </Link>
                     </div>
-                    <div className="flex items-center space-x-6 text-sm md:text-base">
+                    <div className="flex items-center space-x-4 md:space-x-6 text-sm md:text-base">
                         {navItems.map((item) => {
 
                             const linkHref = pathname === "/" ? item.href : `/${item.href}`;
@@ -33,7 +33,7 @@ const Nav = () => {
                                 <Link
                                     key={item.name}
                                     href={linkHref}
-                                    className="text-foreground hover:text-primary transition-colors font-medium"
+                                    className="text-foreground hover:text-primary transition-colors font-medium whitespace-nowrap shrink-0"
                                     aria-current={pathname === linkHref ? 'page' : undefined}
                                 >
                                     {item.name}
