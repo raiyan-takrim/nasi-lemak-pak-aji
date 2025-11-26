@@ -287,11 +287,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 - **Website:** [nasi-lemak-pak-aji.vercel.app](https://nasi-lemak-pak-aji.vercel.app)
-- **Email:** your-email@example.com
-- **GitHub:** [@yourusername](https://github.com/yourusername)
+- **Email:** raiyan.takrim3@gmail.com
+- **GitHub:** [@raiyan-takrim](https://github.com/raiyan-takrim)
 
 ---
 
-Made with ❤️ by [Your Name](https://github.com/yourusername)
+Made with ❤️ by [RAIYAN TAKRIM](https://github.com/yourusername)
 
 Preserving Malaysian culinary heritage, one plate at a time. 🇲🇾
