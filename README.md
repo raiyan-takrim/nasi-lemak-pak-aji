@@ -121,8 +121,6 @@ nasi-lemak-pak-aji/
 │   ├── data/                    # Static data
 │   │   ├── menu-items.ts        # Menu items data
 │   │   └── nav-items.ts         # Navigation items
-│   ├── hooks/                   # Custom React hooks
-│   │   └── use-share.ts         # Share functionality hook
 │   └── lib/                     # Utility functions
 │       └── utils.ts             # Helper utilities
 ├── .env.example                 # Environment variables template
@@ -141,12 +139,6 @@ nasi-lemak-pak-aji/
 - Structured data (JSON-LD) for rich search results
 - QR code generation and sharing functionality
 - Responsive image gallery with Next.js Image optimization
-
-### Share Hook (`src/hooks/use-share.ts`)
-
-- Reusable sharing functionality
-- Web Share API integration with clipboard fallback
-- Support for sharing URLs, text, and files
 
 ### Navigation (`src/components/navigation/navbar.tsx`)
 
